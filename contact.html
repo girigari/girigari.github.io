@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Girigari</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Karla:wght@300;400&family=Noto+Serif+Devanagari:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    .contact-page {
+      min-height: 90vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 6rem;
+    }
+
+    .contact-left {
+      padding: 5rem 3rem;
+      border-right: 1px solid var(--sand);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .contact-left h1 {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .contact-left h1 em {
+      font-style: italic;
+      color: var(--rust);
+    }
+
+    .contact-left-note {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 1.7;
+      max-width: 380px;
+      margin-bottom: 3rem;
+    }
+
+    .contact-pahari {
+      margin-top: auto;
+    }
+
+    .contact-right {
+      padding: 5rem 3rem;
+    }
+
+    .contact-right h2 {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 2.5rem;
+    }
+
+    .contact-item {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .contact-item:last-child {
+      border-bottom: none;
+    }
+
+    .contact-item-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-item-value {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--ink);
+    }
+
+    .contact-item-value a {
+      border-bottom: 1px solid var(--sand);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .contact-item-value a:hover {
+      color: var(--rust);
+      border-color: var(--rust);
+    }
+
+    .contact-item-sub {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      margin-top: 0.3rem;
+    }
+
+    .contact-open {
+      margin-top: 3rem;
+      padding: 1.5rem;
+      border: 1px solid var(--sand);
+      background: var(--glass);
+    }
+
+    .contact-open p {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+    }
+
+    .contact-open-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .contact-open-tags .tag {
+      font-size: 0.65rem;
+    }
+
+    @media (max-width: 800px) {
+      .contact-page {
+        grid-template-columns: 1fr;
+      }
+      .contact-left {
+        border-right: none;
+        border-bottom: 1px solid var(--sand);
+        padding: 4rem 1.5rem 3rem;
+      }
+      .contact-right {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Girigari" /></a>
+    <ul class="nav-links">
+      <li><a href="work.html">work</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact-page">
+
+    <div class="contact-left reveal">
+      <div>
+        <h1>Let's make<br/><em>something</em><br/>together.</h1>
+        <p class="contact-left-note">
+          Open to collaborations, residencies, commissions, 
+          and conversations — especially those that involve 
+          mountains, waste, memory, or glass.
+        </p>
+      </div>
+      <div class="contact-pahari">
+        <span class="pahari">मिलके काम करदे हाँ।</span>
+        <span class="pahari-trans">Let us work together.</span>
+      </div>
+    </div>
+
+    <div class="contact-right reveal">
+      <h2>reach out</h2>
+
+      <div class="contact-item">
+        <p class="contact-item-label">email</p>
+        <p class="contact-item-value">
+          <a href="mailto:hello@girigari.in">hello@girigari.in</a>
+        </p>
+        <p class="contact-item-sub">Replace with your actual email address</p>
+      </div>
+
+      <div class="contact-item">
+        <p class="contact-item-label">based in</p>
+        <p class="contact-item-value">Kangra Valley</p>
+        <p class="contact-item-sub">Himachal Pradesh, India</p>
+      </div>
+
+      <div class="contact-item">
+        <p class="contact-item-label">instagram</p>
+        <p class="contact-item-value">
+          <a href="https://instagram.com/girigari" target="_blank">@girigari</a>
+        </p>
+        <p class="contact-item-sub">Update with your actual handle</p>
+      </div>
+
+      <div class="contact-open">
+        <p>Currently open to:</p>
+        <div class="contact-open-tags">
+          <span class="tag">artist residencies</span>
+          <span class="tag">fellowships</span>
+          <span class="tag">curatorial collaborations</span>
+          <span class="tag">community workshops</span>
+          <span class="tag">research partnerships</span>
+          <span class="tag">commissions</span>
+          <span class="tag">glass work</span>
+          <span class="tag">exhibition design</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">गिरिगारी / girigari</p>
+      <p class="footer-location">Kangra Valley, Himachal Pradesh, India</p>
+      <div class="footer-links">
+        <a href="work.html">work</a>
+        <a href="about.html">about</a>
+      </div>
+      <p class="footer-note">Vaibhavi Kowshik © 2025</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

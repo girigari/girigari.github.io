@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Work — Girigari</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Karla:wght@300;400&family=Noto+Serif+Devanagari:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    .work-hero {
+      padding: 8rem 3rem 3rem;
+      border-bottom: 1px solid var(--sand);
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .work-hero h1 {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    /* Filter tabs */
+    .work-filters {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .filter-btn {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: lowercase;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--sand);
+      background: transparent;
+      color: var(--ink-light);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    /* Projects */
+    .projects {
+      padding: 4rem 3rem;
+    }
+
+    .project-section {
+      margin-bottom: 6rem;
+      scroll-margin-top: 5rem;
+    }
+
+    .project-section-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-section h2 {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--sand);
+      padding-bottom: 1.5rem;
+    }
+
+    .project-description {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--ink-light);
+      max-width: 650px;
+      margin-bottom: 2.5rem;
+    }
+
+    .project-description em { color: var(--rust); font-style: italic; }
+
+    /* Image grid — placeholder tiles for now */
+    .project-grid {
+      display: grid;
+      gap: 1.5px;
+      background: var(--sand);
+    }
+
+    .project-grid--3 { grid-template-columns: repeat(3, 1fr); }
+    .project-grid--2 { grid-template-columns: repeat(2, 1fr); }
+
+    .project-tile {
+      background: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-tile-inner {
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .project-tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+    }
+
+    /* Placeholder colour tiles until images are added */
+    .tile-echoes { background: #c8b8a2; }
+    .tile-exhibition { background: #8a9e8c; }
+    .tile-workshop { background: #b5956a; }
+    .tile-illustration { background: #d4c5b0; }
+    .tile-photography { background: #6b7c8a; }
+    .tile-fellowship { background: #a89880; }
+
+    .tile-label {
+      position: absolute;
+      bottom: 0.8rem;
+      left: 0.8rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--ink);
+      background: rgba(242,237,230,0.85);
+      padding: 0.2rem 0.5rem;
+    }
+
+    /* Add image instruction */
+    .image-placeholder {
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      color: rgba(28,26,24,0.3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border: 1px dashed var(--sand);
+    }
+
+    .project-meta {
+      display: flex;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--sand);
+    }
+
+    .project-meta-item {
+      font-size: 0.75rem;
+      color: var(--ink-light);
+    }
+
+    .project-meta-item strong {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.2rem;
+      font-weight: 400;
+    }
+
+    @media (max-width: 900px) {
+      .work-hero {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 7rem 1.5rem 2rem;
+      }
+      .work-filters { justify-content: flex-start; }
+      .projects { padding: 3rem 1.5rem; }
+      .project-grid--3 { grid-template-columns: repeat(2, 1fr); }
+      .project-grid--2 { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .project-grid--3 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Girigari" /></a>
+    <ul class="nav-links">
+      <li><a href="work.html">work</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="work-hero">
+    <h1>Work</h1>
+    <div class="work-filters">
+      <button class="filter-btn active" data-filter="all">all</button>
+      <button class="filter-btn" data-filter="glass">glass</button>
+      <button class="filter-btn" data-filter="exhibition">exhibition</button>
+      <button class="filter-btn" data-filter="workshop">workshop</button>
+      <button class="filter-btn" data-filter="illustration">illustration</button>
+      <button class="filter-btn" data-filter="photography">photography</button>
+      <button class="filter-btn" data-filter="fellowship">fellowship</button>
+    </div>
+  </section>
+
+  <section class="projects">
+
+    <!-- Echoes in Glass -->
+    <div id="echoes" class="project-section reveal" data-category="glass">
+      <p class="project-section-label">glass · sound · archive</p>
+      <h2>Echoes in Glass</h2>
+      <p class="project-description">
+        In Kangra Valley, two birds called the <em>Kurla-Kurli</em> once functioned 
+        as a living bio-acoustic system for predicting rain. As climate change silences 
+        these birds, the tradition is vanishing. At the same time, mountain landscapes 
+        fill with construction and demolition waste — glass that no urban-centric 
+        circularity model can reach.
+        <br/><br/>
+        Echoes in Glass transforms this waste into sensor-embedded vessels that carry 
+        the oral histories gathered from elders — turning refuse into archive, 
+        making the invisible tangible.
+      </p>
+      <div class="project-grid project-grid--3">
+        <div class="project-tile tile-echoes">
+          <div class="image-placeholder">image — vessel 01</div>
+        </div>
+        <div class="project-tile tile-echoes">
+          <div class="image-placeholder">image — vessel 02</div>
+        </div>
+        <div class="project-tile tile-echoes">
+          <div class="image-placeholder">image — field documentation</div>
+        </div>
+        <div class="project-tile tile-echoes" style="grid-column: span 2;">
+          <div class="image-placeholder" style="aspect-ratio: 21/9;">image — Kangra Valley landscape</div>
+        </div>
+        <div class="project-tile tile-echoes">
+          <div class="image-placeholder">image — glass process</div>
+        </div>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-item"><strong>medium</strong>Recycled glass, sound sensors, oral history</div>
+        <div class="project-meta-item"><strong>location</strong>Kangra Valley, Himachal Pradesh</div>
+        <div class="project-meta-item"><strong>year</strong>2024 — ongoing</div>
+      </div>
+    </div>
+
+    <!-- Exhibition Design -->
+    <div id="exhibitions" class="project-section reveal" data-category="exhibition">
+      <p class="project-section-label">exhibition design</p>
+      <h2>Exhibition Design</h2>
+      <p class="project-description">
+        Over 14 years of spatial storytelling across museums, galleries, and 
+        community spaces — designing environments that make ideas physical, 
+        and make the overlooked visible.
+      </p>
+      <div class="project-grid project-grid--3">
+        <div class="project-tile tile-exhibition">
+          <div class="image-placeholder">image — exhibition 01</div>
+        </div>
+        <div class="project-tile tile-exhibition">
+          <div class="image-placeholder">image — exhibition 02</div>
+        </div>
+        <div class="project-tile tile-exhibition">
+          <div class="image-placeholder">image — exhibition 03</div>
+        </div>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-item"><strong>medium</strong>Spatial design, installation</div>
+        <div class="project-meta-item"><strong>year</strong>2010 — ongoing</div>
+      </div>
+    </div>
+
+    <!-- Workshops -->
+    <div id="workshops" class="project-section reveal" data-category="workshop">
+      <p class="project-section-label">workshops · community</p>
+      <h2>Kabaad se Jugaad</h2>
+      <p class="project-description">
+        <em>Kabaad se Jugaad</em> — wealth from waste. Workshops in mountain villages, 
+        schools, and community spaces where participants collect, reimagine, and 
+        rebuild with what has been discarded. Making something from nothing 
+        is not a constraint. It is a methodology.
+      </p>
+      <div class="project-grid project-grid--2">
+        <div class="project-tile tile-workshop">
+          <div class="image-placeholder">image — workshop 01</div>
+        </div>
+        <div class="project-tile tile-workshop">
+          <div class="image-placeholder">image — workshop 02</div>
+        </div>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-item"><strong>medium</strong>Community workshop, found materials</div>
+        <div class="project-meta-item"><strong>location</strong>Himachal Pradesh, India</div>
+        <div class="project-meta-item"><strong>year</strong>2018 — ongoing</div>
+      </div>
+    </div>
+
+    <!-- Illustrations -->
+    <div id="illustrations" class="project-section reveal" data-category="illustration">
+      <p class="project-section-label">illustration · drawing</p>
+      <h2>Illustrations</h2>
+      <p class="project-description">
+        Hand-drawn explorations — birds, mountains, fragments, and the lines 
+        between things. Drawing as a way of looking slowly.
+      </p>
+      <div class="project-grid project-grid--3">
+        <div class="project-tile tile-illustration">
+          <div class="image-placeholder">image — illustration 01</div>
+        </div>
+        <div class="project-tile tile-illustration">
+          <div class="image-placeholder">image — illustration 02</div>
+        </div>
+        <div class="project-tile tile-illustration">
+          <div class="image-placeholder">image — illustration 03</div>
+        </div>
+        <div class="project-tile tile-illustration">
+          <div class="image-placeholder">image — illustration 04</div>
+        </div>
+        <div class="project-tile tile-illustration">
+          <div class="image-placeholder">image — illustration 05</div>
+        </div>
+        <div class="project-tile tile-illustration">
+          <div class="image-placeholder">image — illustration 06</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Photography -->
+    <div id="photography" class="project-section reveal" data-category="photography">
+      <p class="project-section-label">photography</p>
+      <h2>Photography</h2>
+      <p class="project-description">
+        Documenting landscapes, waste, people, and the quiet evidence 
+        of how we live in mountain regions.
+      </p>
+      <div class="project-grid project-grid--3">
+        <div class="project-tile tile-photography" style="grid-column: span 2;">
+          <div class="image-placeholder" style="aspect-ratio: 16/9;">image — landscape 01</div>
+        </div>
+        <div class="project-tile tile-photography">
+          <div class="image-placeholder">image — detail 01</div>
+        </div>
+        <div class="project-tile tile-photography">
+          <div class="image-placeholder">image — portrait 01</div>
+        </div>
+        <div class="project-tile tile-photography" style="grid-column: span 2;">
+          <div class="image-placeholder" style="aspect-ratio: 16/9;">image — landscape 02</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fellowships -->
+    <div id="fellowships" class="project-section reveal" data-category="fellowship">
+      <p class="project-section-label">fellowships · residencies</p>
+      <h2>Fellowships & Residencies</h2>
+      <p class="project-description">
+        A record of the programmes, communities, and periods of deep learning 
+        that have shaped the practice — from Berlin to the Kangra Valley.
+      </p>
+      <div class="project-grid project-grid--2">
+        <div class="project-tile tile-fellowship">
+          <div class="image-placeholder">image — DO School</div>
+        </div>
+        <div class="project-tile tile-fellowship">
+          <div class="image-placeholder">image — Be:Fantastic</div>
+        </div>
+      </div>
+      <div class="project-meta">
+        <div class="project-meta-item"><strong>programmes</strong>DO School Berlin · Be:Fantastic Together · Climatebase</div>
+        <div class="project-meta-item"><strong>year</strong>2015 — ongoing</div>
+      </div>
+    </div>
+
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">गिरिगारी / girigari</p>
+      <p class="footer-location">Kangra Valley, Himachal Pradesh, India</p>
+      <div class="footer-links">
+        <a href="contact.html">get in touch</a>
+        <a href="about.html">about</a>
+      </div>
+      <p class="footer-note">Vaibhavi Kowshik © 2025</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Filter logic
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const sections = document.querySelectorAll('.project-section');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        sections.forEach(section => {
+          if (filter === 'all' || section.dataset.category === filter) {
+            section.style.display = 'block';
+          } else {
+            section.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

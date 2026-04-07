@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV — Girigari</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Karla:wght@300;400&family=Noto+Serif+Devanagari:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+
+    .cv-hero {
+      padding: 8rem 3rem 3rem;
+      border-bottom: 1px solid var(--sand);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+    }
+
+    .cv-hero h1 {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+    }
+
+    .cv-download {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--ink-light);
+      border: 1px solid var(--sand);
+      padding: 0.6rem 1.2rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .cv-download:hover {
+      background: var(--ink);
+      color: var(--cream);
+      border-color: var(--ink);
+    }
+
+    .cv-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .cv-track {
+      padding: 3rem;
+    }
+
+    .cv-track:first-child {
+      border-right: 1px solid var(--sand);
+    }
+
+    .cv-track-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.4rem;
+    }
+
+    .cv-track-title {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-size: 1.6rem;
+      margin-bottom: 2.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .cv-section { margin-bottom: 2.5rem; }
+
+    .cv-section-heading {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .cv-entry {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 1px solid rgba(200, 184, 162, 0.35);
+    }
+
+    .cv-entry:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .cv-year {
+      font-size: 0.68rem;
+      color: var(--rust);
+      letter-spacing: 0.03em;
+      padding-top: 0.15rem;
+      line-height: 1.5;
+    }
+
+    .cv-entry-title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+      line-height: 1.3;
+    }
+
+    .cv-entry-sub {
+      font-size: 0.75rem;
+      color: var(--ink-light);
+      line-height: 1.4;
+    }
+
+    .cv-entry-note {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--ink-light);
+      margin-top: 0.3rem;
+      line-height: 1.5;
+    }
+
+    .cv-skills {
+      padding: 2.5rem 3rem;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .cv-skills h2 {
+      font-size: 0.65rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .cv-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5px;
+      background: var(--sand);
+    }
+
+    .cv-skills-group {
+      background: var(--cream);
+      padding: 1.2rem;
+    }
+
+    .cv-skills-group-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+
+    .cv-skills-group .tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.05em;
+      padding: 0.25rem 0.6rem;
+      border: 1px solid var(--sand);
+      color: var(--ink-light);
+      margin: 0.2rem 0.2rem 0 0;
+    }
+
+    @media (max-width: 900px) {
+      .cv-hero { flex-direction: column; align-items: flex-start; padding: 7rem 1.5rem 2rem; }
+      .cv-body { grid-template-columns: 1fr; }
+      .cv-track:first-child { border-right: none; border-bottom: 1px solid var(--sand); }
+      .cv-track { padding: 2.5rem 1.5rem; }
+      .cv-skills { padding: 2rem 1.5rem; }
+      .cv-skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .cv-skills-grid { grid-template-columns: 1fr; }
+      .cv-entry { grid-template-columns: 65px 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="grain"></div>
+
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Girigari" /></a>
+    <ul class="nav-links">
+      <li><a href="work.html">work</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="cv.html">cv</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="cv-hero">
+    <h1>Curriculum Vitae</h1>
+    <a href="images/KOWSHIK_Vaibhavi_Resume_2026.pdf" class="cv-download" target="_blank">
+      download pdf →
+    </a>
+  </section>
+
+  <div class="cv-body">
+
+    <!-- LEFT — Artistic / Girigari -->
+    <div class="cv-track reveal">
+      <p class="cv-track-label">artistic practice</p>
+      <h2 class="cv-track-title">Girigari</h2>
+
+      <div class="cv-section">
+        <h3 class="cv-section-heading">curatorial & research</h3>
+
+        <div class="cv-entry">
+          <span class="cv-year">2024 —<br/>present</span>
+          <div>
+            <p class="cv-entry-title">Lead Researcher & Curator — Echoes in Glass</p>
+            <p class="cv-entry-sub">Kangra Valley, Himachal Pradesh</p>
+            <p class="cv-entry-note">Research-based art project mapping the intersection of Western Himalayan oral traditions (Kurla-Kurli) and glass waste pollution. Community workshops in flame-working; sensor-embedded glass vessels; Living Digital Map archiving geo-spatial ecological memory.</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2017 —<br/>2018</span>
+          <div>
+            <p class="cv-entry-title">Fellow — India Foundation for the Arts (IFA)</p>
+            <p class="cv-entry-sub">New Delhi</p>
+            <p class="cv-entry-note">Archival research on "Nature in Delhi" archives. Translated findings into public curatorial narratives and immersive experiences using 360° video and Google Cardboard VR.</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2009 —<br/>present</span>
+          <div>
+            <p class="cv-entry-title">Freelance Curator & Exhibition Designer</p>
+            <p class="cv-entry-sub">India & International</p>
+            <p class="cv-entry-note">Retrospectives for K.G. Subramanyan, Vijay Kowshik, Raj Dassani. Stage design for The Tadpole Repertory (2009–2017) — Best Stage Design for <em>Still and Still Moving</em>. Art direction for Indian Ocean's Tandanu album; installations for Bacardi NH7 Weekender (2011–2013). India Pavilion pitch, World Expo 2012.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cv-section">
+        <h3 class="cv-section-heading">community & leadership</h3>
+
+        <div class="cv-entry">
+          <span class="cv-year">2018 —<br/>present</span>
+          <div>
+            <p class="cv-entry-title">Kabaad se Jugaad — Community Workshops</p>
+            <p class="cv-entry-sub">Himachal Pradesh, India</p>
+            <p class="cv-entry-note">Wealth-from-waste workshops in mountain villages, schools, and orphanages.</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">present</span>
+          <div>
+            <p class="cv-entry-title">Program Developer — ARTS-GLACERHI</p>
+            <p class="cv-entry-sub">Himachal Pradesh</p>
+            <p class="cv-entry-note">Arts for Social Change — workshops on waste, nature, and creativity; co-developing a residency and learning space.</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">present</span>
+          <div>
+            <p class="cv-entry-title">Assistant Secretary — Woodland Society</p>
+            <p class="cv-entry-sub">Andretta, Himachal Pradesh</p>
+            <p class="cv-entry-note">Supporting cultural and conservation initiatives.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cv-section">
+        <h3 class="cv-section-heading">fellowships & recognition</h3>
+
+        <div class="cv-entry">
+          <span class="cv-year">2025</span>
+          <div>
+            <p class="cv-entry-title">School of Climate Change</p>
+            <p class="cv-entry-sub">Oxford Climate Society</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2024</span>
+          <div>
+            <p class="cv-entry-title">EmpowerHer Journey Fellow</p>
+            <p class="cv-entry-sub">UNDP – Villgro</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2024</span>
+          <div>
+            <p class="cv-entry-title">Climatebase Fellow, Cohort 5</p>
+            <p class="cv-entry-sub">Climate-focused entrepreneurship</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2020 —<br/>2021</span>
+          <div>
+            <p class="cv-entry-title">BE:Fantastic Together Fellow</p>
+            <p class="cv-entry-sub">Climate Tech + Art</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2016 —<br/>2017</span>
+          <div>
+            <p class="cv-entry-title">The DO School Fellow</p>
+            <p class="cv-entry-sub">Connection Challenge, Berlin</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT — Professional / Vaibhavi -->
+    <div class="cv-track reveal">
+      <p class="cv-track-label">professional practice</p>
+      <h2 class="cv-track-title">Vaibhavi Kowshik</h2>
+
+      <div class="cv-section">
+        <h3 class="cv-section-heading">education</h3>
+
+        <div class="cv-entry">
+          <span class="cv-year">expected<br/>2027</span>
+          <div>
+            <p class="cv-entry-title">Master's in Sustainability Science</p>
+            <p class="cv-entry-sub">IGNOU, India</p>
+            <p class="cv-entry-note">Field research: glass waste recycling in Kangra Valley, Himachal Pradesh.</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2009</span>
+          <div>
+            <p class="cv-entry-title">Graduate Diploma in Design — Exhibition Design</p>
+            <p class="cv-entry-sub">National Institute of Design (NID), Ahmedabad</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2004</span>
+          <div>
+            <p class="cv-entry-title">CBSE</p>
+            <p class="cv-entry-sub">Mother's International School, New Delhi</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2000</span>
+          <div>
+            <p class="cv-entry-title">Free Progress Open Learning</p>
+            <p class="cv-entry-sub">Mirambika School, New Delhi</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cv-section">
+        <h3 class="cv-section-heading">teaching & education</h3>
+
+        <div class="cv-entry">
+          <span class="cv-year">2025</span>
+          <div>
+            <p class="cv-entry-title">Founder — Girigari</p>
+            <p class="cv-entry-sub">Proprietorship, Himachal Pradesh</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2020 —<br/>2022</span>
+          <div>
+            <p class="cv-entry-title">Assistant Professor — Design Programs</p>
+            <p class="cv-entry-sub">JK Lakshmipat University, Jaipur</p>
+            <p class="cv-entry-note">Visual storytelling, publication design, IoT product design, climate-focused projects, data visualisation, behavioural design, expressive typography.</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2018 —<br/>2020</span>
+          <div>
+            <p class="cv-entry-title">Assistant Professor — Space & Communication Design</p>
+            <p class="cv-entry-sub">Indian Institute of Art & Design (IIAD), Delhi</p>
+            <p class="cv-entry-note">Spatial storytelling, 360° video, "Design for a Better Future" with start-ups. Collaborated with NGO Katha on digital literacy and narrative design.</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2018</span>
+          <div>
+            <p class="cv-entry-title">Visiting Faculty</p>
+            <p class="cv-entry-sub">National Institute of Design, Haryana · Pearl Academy, Noida</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cv-section">
+        <h3 class="cv-section-heading">recent roles & speaking</h3>
+
+        <div class="cv-entry">
+          <span class="cv-year">2025</span>
+          <div>
+            <p class="cv-entry-title">Jury Member</p>
+            <p class="cv-entry-sub">Chitkara University, Chandigarh</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2024</span>
+          <div>
+            <p class="cv-entry-title">Chief Guest & Lecturer — Waste to Wealth</p>
+            <p class="cv-entry-sub">Central University of Himachal Pradesh, Dharamshala</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2024</span>
+          <div>
+            <p class="cv-entry-title">Jury Member</p>
+            <p class="cv-entry-sub">National Institute of Fashion Technology, Kangra</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2011 —<br/>2013</span>
+          <div>
+            <p class="cv-entry-title">Communication Designer & Outreach Coordinator</p>
+            <p class="cv-entry-sub">ZED (Eco BCIL), Bangalore</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="cv-section">
+        <h3 class="cv-section-heading">certifications</h3>
+
+        <div class="cv-entry">
+          <span class="cv-year">2025</span>
+          <div>
+            <p class="cv-entry-title">Environment Data & GIS for Communication</p>
+            <p class="cv-entry-sub">CSE Certification</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2024</span>
+          <div>
+            <p class="cv-entry-title">UNITAR Certifications</p>
+            <p class="cv-entry-sub">Sustainable Development & Inclusive Green Economy</p>
+          </div>
+        </div>
+
+        <div class="cv-entry">
+          <span class="cv-year">2022</span>
+          <div>
+            <p class="cv-entry-title">Living Lab Research Fellow (HCI + HCD)</p>
+            <p class="cv-entry-sub">IIIT-Delhi</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <section class="cv-skills reveal">
+    <h2>skills & methods</h2>
+    <div class="cv-skills-grid">
+      <div class="cv-skills-group">
+        <span class="cv-skills-group-label">making</span>
+        <span class="tag">glass sculpture</span>
+        <span class="tag">flame-working</span>
+        <span class="tag">textile</span>
+        <span class="tag">embroidery</span>
+        <span class="tag">batik</span>
+        <span class="tag">mural drawing</span>
+        <span class="tag">printmaking</span>
+        <span class="tag">upcycling</span>
+      </div>
+      <div class="cv-skills-group">
+        <span class="cv-skills-group-label">research & field</span>
+        <span class="tag">ethnographic interviewing</span>
+        <span class="tag">oral history</span>
+        <span class="tag">participatory methods</span>
+        <span class="tag">GIS mapping</span>
+        <span class="tag">waste mapping</span>
+        <span class="tag">archival research</span>
+      </div>
+      <div class="cv-skills-group">
+        <span class="cv-skills-group-label">design & tech</span>
+        <span class="tag">exhibition design</span>
+        <span class="tag">spatial design</span>
+        <span class="tag">speculative design</span>
+        <span class="tag">360° video</span>
+        <span class="tag">AR/VR</span>
+        <span class="tag">p5.js</span>
+        <span class="tag">Blender</span>
+        <span class="tag">Adobe Suite</span>
+        <span class="tag">Affinity Suite</span>
+      </div>
+      <div class="cv-skills-group">
+        <span class="cv-skills-group-label">languages</span>
+        <span class="tag">English — fluent</span>
+        <span class="tag">Hindi — fluent</span>
+        <span class="tag">Spanish — beginner</span>
+        <span class="cv-skills-group-label" style="margin-top:1rem">community</span>
+        <span class="tag">workshop facilitation</span>
+        <span class="tag">circular economy</span>
+        <span class="tag">climate pedagogy</span>
+        <span class="tag">NGO programming</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-name">गिरिगारी / girigari</p>
+      <p class="footer-location">Kangra Valley, Himachal Pradesh, India</p>
+      <div class="footer-links">
+        <a href="work.html">work</a>
+        <a href="contact.html">get in touch</a>
+      </div>
+      <p class="footer-note">Vaibhavi Kowshik © 2025</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
