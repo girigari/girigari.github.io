@@ -19,7 +19,7 @@ revealEls.forEach(el => observer.observe(el));
 const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
-    nav.style.backgroundColor = 'rgba(242, 237, 230, 0.92)';
+    nav.style.backgroundColor = 'rgba(242, 237, 230, 0.85)';
   } else {
     nav.style.backgroundColor = '';
   }
