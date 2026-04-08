@@ -17,6 +17,13 @@ revealEls.forEach(el => observer.observe(el));
 
 // Nav: add slight background on scroll
 const nav = document.querySelector('nav');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 60) {
+    nav.style.backgroundColor = 'rgba(242, 237, 230, 0.92)';
+  } else {
+    nav.style.backgroundColor = '';
+  }
+});
 
 // Subtle cursor trail — tiny dots that follow the cursor
 // Disabled on touch devices
