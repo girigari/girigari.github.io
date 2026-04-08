@@ -27,7 +27,7 @@ if (window.matchMedia('(pointer: fine)').matches) {
     top: 0; left: 0;
     width: 100%; height: 100%;
     pointer-events: none;
-    z-index: 998;
+    z-index: 99;
     opacity: 0.35;
   `;
   document.body.appendChild(canvas);
