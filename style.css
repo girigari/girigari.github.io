@@ -53,7 +53,8 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 0.8rem 3rem;
-}
+  background: rgba(242, 237, 230, 0.85);
+  backdrop-filter: blur(6px);
 
 .nav-logo {
   font-family: var(--font-devanagari);
