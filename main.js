@@ -20,7 +20,7 @@ const nav = document.querySelector('nav');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 60) {
     nav.style.backdropFilter = 'blur(8px)';
-    nav.style.backgroundColor = 'rgba(242, 237, 230, 1)';
+    nav.style.backgroundColor = 'rgba(242, 237, 230, 0.85)';
   } else {
     nav.style.backdropFilter = '';
     nav.style.backgroundColor = '';
