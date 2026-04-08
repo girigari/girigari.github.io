@@ -11,10 +11,6 @@
     .cv-hero {
       padding: 8rem 3rem 3rem;
       border-bottom: 1px solid var(--sand);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 2rem;
     }
     .cv-hero h1 {
       font-family: var(--font-serif);
@@ -37,11 +33,18 @@
       color: var(--cream);
       border-color: var(--ink);
     }
-    .cv-downloads {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+    .cv-downloads-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--sand);
+    }
+    .cv-downloads-bar .cv-download {
+      padding: 1.2rem 3rem;
+      border-right: 1px solid var(--sand);
+      border-bottom: none;
+    }
+    .cv-downloads-bar .cv-download:last-child {
+      border-right: none;
     }
     .cv-body {
       display: grid;
@@ -141,32 +144,18 @@
       margin: 0.2rem 0.2rem 0 0;
     }
     @media (max-width: 900px) {
-      .cv-hero { flex-direction: column; align-items: flex-start; padding: 7rem 1.5rem 2rem; }
+      .cv-hero { padding: 7rem 1.5rem 2rem; }
       .cv-body { grid-template-columns: 1fr; }
+      .cv-downloads-bar { grid-template-columns: 1fr; }
+      .cv-downloads-bar .cv-download { border-right: none; border-bottom: 1px solid var(--sand); }
       .cv-track:first-child { border-right: none; border-bottom: 1px solid var(--sand); }
       .cv-track { padding: 2.5rem 1.5rem; }
       .cv-skills { padding: 2rem 1.5rem; }
       .cv-skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .cv-downloads { justify-content: flex-start; }
     }
     @media (max-width: 600px) {
       .cv-skills-grid { grid-template-columns: 1fr; }
       .cv-entry { grid-template-columns: 65px 1fr; }
-    }
-    .cv-downloads-bar {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-bottom: 1px solid var(--sand);
-    }
-
-    .cv-downloads-bar .cv-download {
-      padding: 1.2rem 3rem;
-      border-right: 1px solid var(--sand);
-      border-bottom: none;
-    }
-
-    .cv-downloads-bar .cv-download:last-child {
-      border-right: none;
     }
   </style>
 </head>
@@ -184,7 +173,7 @@
     </ul>
   </nav>
 
- <section class="cv-hero">
+  <section class="cv-hero">
     <h1>Record of Practice</h1>
   </section>
 
@@ -200,8 +189,6 @@
   <div class="cv-body">
 
     <!-- LEFT — Artistic / Girigari -->
-    
-    </div> 
     <div class="cv-track reveal">
       <p class="cv-track-label">artistic practice</p>
       <h2 class="cv-track-title">Girigari</h2>
@@ -331,7 +318,7 @@
     </div>
 
     <!-- RIGHT — Professional / Vaibhavi -->
-         <div class="cv-track reveal">
+    <div class="cv-track reveal">
       <p class="cv-track-label">professional practice</p>
       <h2 class="cv-track-title">Vaibhavi Kowshik</h2>
 
@@ -344,12 +331,13 @@
             <p class="cv-entry-sub">Proprietorship, Himachal Pradesh</p>
             <p class="cv-entry-note">Independent artistic practice — making, exhibiting, and selling works across glass, fabric, paper, wood, stone, and digital mediums.</p>
           </div>
-          <div class="cv-entry">
-           <span class="cv-year">2009 —<br/>2021</span>
+        </div>
+        <div class="cv-entry">
+          <span class="cv-year">2009 —<br/>2021</span>
           <div>
             <p class="cv-entry-title">Founder — Vaispace</p>
             <p class="cv-entry-sub">Proprietorship, Delhi</p>
-            <p class="cv-entry-note">Independent Exhibition and Visual Communication Design practice</p>
+            <p class="cv-entry-note">Independent Exhibition and Visual Communication Design practice.</p>
           </div>
         </div>
       </div>
