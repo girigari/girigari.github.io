@@ -153,6 +153,21 @@
       .cv-skills-grid { grid-template-columns: 1fr; }
       .cv-entry { grid-template-columns: 65px 1fr; }
     }
+    .cv-downloads-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-bottom: 1px solid var(--sand);
+    }
+
+    .cv-downloads-bar .cv-download {
+      padding: 1.2rem 3rem;
+      border-right: 1px solid var(--sand);
+      border-bottom: none;
+    }
+
+    .cv-downloads-bar .cv-download:last-child {
+      border-right: none;
+    }
   </style>
 </head>
 <body>
