@@ -73,7 +73,7 @@ nav {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: lowercase;
-  color: var(--cream);
+  color: var(--ink-light);
   transition: color 0.2s;
   position: relative;
 }
