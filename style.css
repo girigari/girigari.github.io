@@ -104,16 +104,6 @@ nav {
   background-size: cover;
   background-position: center;
 }
-/* Subtle hand-drawn border feel */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 6rem;
-  right: 3rem;
-  width: 1px;
-  height: 40vh;
-  background: linear-gradient(to bottom, transparent, var(--sand), transparent);
-}
 
 .hero-text {
   max-width: 700px;
