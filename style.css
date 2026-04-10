@@ -100,8 +100,10 @@ nav {
   padding: 0 3rem 4rem;
   position: relative;
   border-bottom: 1px solid var(--sand);
+  background-image: url('images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
 }
-
 /* Subtle hand-drawn border feel */
 .hero::before {
   content: '';
