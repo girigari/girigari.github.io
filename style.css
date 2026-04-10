@@ -5,7 +5,7 @@
 :root {
   --cream: #f2ede6;
   --ink: #1c1a18;
-  --ink-light: #4a4540;
+  --cream: #4a4540;
   --rust: #8b4a2f;
   --sage: #6b7c5e;
   --sand: #c8b8a2;
@@ -73,7 +73,7 @@ nav {
   font-size: 0.8rem;
   letter-spacing: 0.15em;
   text-transform: lowercase;
-  color: var(--ink-light);
+  color: var(--cream);
   transition: color 0.2s;
   position: relative;
 }
@@ -124,7 +124,7 @@ nav {
   font-size: 0.75rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--rust);
+  color: var(--cream);
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeUp 0.8s 0.2s forwards;
@@ -136,7 +136,7 @@ nav {
   font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
-  color: var(--ink);
+  color: var(--cream);
   margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp 0.8s 0.4s forwards;
@@ -156,7 +156,7 @@ nav {
   display: block;
   font-family: var(--font-devanagari);
   font-size: 1.2rem;
-  color: var(--ink-light);
+  color: var(--cream);
   margin-bottom: 0.3rem;
 }
 
@@ -165,7 +165,7 @@ nav {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 0.9rem;
-  color: var(--ink-light);
+  color: var(--cream);
   opacity: 0.7;
 }
 
@@ -185,7 +185,7 @@ nav {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-light);
+  color: var(--cream);
   writing-mode: vertical-rl;
 }
 
@@ -225,7 +225,7 @@ nav {
 .link-arrow {
   font-size: 0.8rem;
   letter-spacing: 0.1em;
-  color: var(--ink-light);
+  color: var(--cream);
   border-bottom: 1px solid var(--sand);
   padding-bottom: 2px;
   transition: color 0.2s, border-color 0.2s;
@@ -246,7 +246,7 @@ nav {
   font-size: 0.7rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: var(--ink-light);
+  color: var(--cream);
   margin-bottom: 3rem;
 }
 
@@ -321,7 +321,7 @@ nav {
 
 .work-card-body p {
   font-size: 0.85rem;
-  color: var(--ink-light);
+  color: var(--cream);
   line-height: 1.5;
   margin-bottom: 1rem;
 }
@@ -368,7 +368,7 @@ nav {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1.1rem;
-  color: var(--ink-light);
+  color: var(--cream);
   opacity: 0.7;
   position: relative;
 }
@@ -394,7 +394,7 @@ footer {
 
 .footer-location {
   font-size: 0.75rem;
-  color: var(--ink-light);
+  color: var(--cream);
   letter-spacing: 0.05em;
 }
 
@@ -407,7 +407,7 @@ footer {
 .footer-links a {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
-  color: var(--ink-light);
+  color: var(--cream);
   border-bottom: 1px solid transparent;
   transition: color 0.2s, border-color 0.2s;
 }
