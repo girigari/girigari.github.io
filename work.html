@@ -221,6 +221,7 @@
       <button class="filter-btn" data-filter="print">prints</button>
       <button class="filter-btn" data-filter="illustration">illustration</button>
       <button class="filter-btn" data-filter="photography">photography</button>
+      <button class="filter-btn" data-filter="video">video</button>
       <button class="filter-btn" data-filter="graphic">graphic design</button>
       <button class="filter-btn" data-filter="exhibition">exhibition design</button>
       <button class="filter-btn" data-filter="stage">stage design</button>
@@ -372,7 +373,123 @@
         <div class="project-meta-item"><strong>year</strong>2009 — ongoing</div>
       </div>
     </div>
-        
+
+<!-- Videos -->
+    <div id="videos" class="project-section reveal" data-category="video">
+      <p class="project-section-label">film · documentation · performance</p>
+      <h2>Videos</h2>
+      <p class="project-description">
+        A record of performances, archival research, community work, and 
+        collaborative experiments with musicians and artists — across 360° film, 
+        documentary, and live documentation.
+      </p>
+
+      <!-- Featured video -->
+      <div class="video-featured">
+        <div class="video-wrapper">
+          <iframe 
+            src="https://www.youtube.com/embed/hNswm7YNtss" 
+            title="Perceiving Pneuma Energy — Vijay Kowshik · Glass Art · 2025"
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        <p class="video-caption">Perceiving Pneuma Energy — Vijay Kowshik · Glass Art · 2025</p>
+      </div>
+
+      <!-- Thumbnail grid -->
+      <div class="video-grid">
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/9a6Q7xrzSpA', 'Parsing the Mind\'s Eye — Vijay Kowshik · Glass Art · 2017')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/9a6Q7xrzSpA/mqdefault.jpg" alt="Parsing the Mind's Eye" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Parsing the Mind's Eye</p>
+          <p class="video-thumb-sub">Vijay Kowshik · Glass Art · 2017</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/_YO7xUaRJ_I', 'Memories in Delhi — Part 1 · IFA Archival & Museum Fellowship · 2018')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/_YO7xUaRJ_I/mqdefault.jpg" alt="Memories in Delhi Part 1" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Memories in Delhi — Part 1</p>
+          <p class="video-thumb-sub">IFA Archival & Museum Fellowship · 2018</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/jOlrtuLa3Fs', 'Memories in Delhi — Part 2 · IFA Archival & Museum Fellowship · 2018')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/jOlrtuLa3Fs/mqdefault.jpg" alt="Memories in Delhi Part 2" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Memories in Delhi — Part 2</p>
+          <p class="video-thumb-sub">IFA Archival & Museum Fellowship · 2018</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/VSDfxafl0Xg', 'Memories in Delhi — Part 3 · IFA Archival & Museum Fellowship · 2018')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/VSDfxafl0Xg/mqdefault.jpg" alt="Memories in Delhi Part 3" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Memories in Delhi — Part 3</p>
+          <p class="video-thumb-sub">IFA Archival & Museum Fellowship · 2018</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/4ajDyevW-eg', 'Diversa — Video Experiment with Musicians')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/4ajDyevW-eg/mqdefault.jpg" alt="Diversa" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Diversa</p>
+          <p class="video-thumb-sub">Video experiment · Musicians</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/MnCyvRHIjhM', 'Mat Ro Bacche — First Indian 360° Music Video · Serendipity Arts Festival 2019, Goa')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/MnCyvRHIjhM/mqdefault.jpg" alt="Mat Ro Bacche 360 Video" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Mat Ro Bacche — 360° Video</p>
+          <p class="video-thumb-sub">Daastan Live · Serendipity Arts Festival 2019</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/IWEXtSl9txE', 'Mat Ro Bacche — Shadow Video · Daastan Live')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/IWEXtSl9txE/mqdefault.jpg" alt="Mat Ro Bacche Shadow Video" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Mat Ro Bacche — Shadow Video</p>
+          <p class="video-thumb-sub">Daastan Live</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/HU1kwNbpeZ8', 'Kabaad se Jugaad — Community Workshop · Himachal Pradesh')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/HU1kwNbpeZ8/mqdefault.jpg" alt="Kabaad se Jugaad Workshop" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Kabaad se Jugaad</p>
+          <p class="video-thumb-sub">Community Workshop · Himachal Pradesh</p>
+        </div>
+
+        <div class="video-thumb" onclick="setFeatured('https://www.youtube.com/embed/x0gHtBNybmY', 'Music Workshop — SoS Village Children · Rahul Sharma & ARTS-GLACERHI')">
+          <div class="video-thumb-img">
+            <img src="https://img.youtube.com/vi/x0gHtBNybmY/mqdefault.jpg" alt="Music Workshop" />
+            <div class="video-play-icon">▶</div>
+          </div>
+          <p class="video-thumb-title">Music Workshop — SoS Village</p>
+          <p class="video-thumb-sub">Rahul Sharma & ARTS-GLACERHI</p>
+        </div>
+
+      </div>
+
+      <div class="project-meta">
+        <div class="project-meta-item"><strong>formats</strong>360° film · documentary · live performance · community documentation</div>
+        <div class="project-meta-item"><strong>year</strong>2017 — ongoing</div>
+      </div>
+    </div>
+    
  <!-- Exhibition Design -->
     <div id="exhibitions" class="project-section reveal" data-category="exhibition">
       <p class="project-section-label">exhibition design</p>
