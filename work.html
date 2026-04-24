@@ -197,6 +197,89 @@
     @media (max-width: 600px) {
       .project-grid--3 { grid-template-columns: 1fr; }
     }
+    .video-featured { margin-bottom: 1.5px; }
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: none;
+    }
+    .video-caption {
+      font-size: 0.75rem;
+      color: var(--ink-light);
+      letter-spacing: 0.05em;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--sand);
+      margin-bottom: 1.5px;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: var(--sand);
+      margin-top: 1.5px;
+    }
+    .video-thumb {
+      background: var(--cream);
+      cursor: pointer;
+      transition: background 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .video-thumb:hover { background: #ede8e0; }
+    .video-thumb-img {
+      position: relative;
+      aspect-ratio: 16/9;
+      overflow: hidden;
+      background: var(--ink);
+      width: 100%;
+    }
+    .video-thumb-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+    }
+    .video-thumb:hover .video-thumb-img img { opacity: 1; }
+    .video-play-icon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: var(--cream);
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .video-thumb:hover .video-play-icon { opacity: 1; }
+    .video-thumb-title {
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--ink);
+      padding: 0.8rem 1rem 0.2rem;
+    }
+    .video-thumb-sub {
+      font-size: 0.72rem;
+      color: var(--ink-light);
+      padding: 0 1rem 1rem;
+      letter-spacing: 0.03em;
+    }
+    @media (max-width: 900px) {
+      .video-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .video-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -589,6 +672,13 @@
   </footer>
 
   <script src="main.js"></script>
+  <script>
+    function setFeatured(src, caption) {
+      document.querySelector('.video-wrapper iframe').src = src;
+      document.querySelector('.video-caption').textContent = caption;
+      document.querySelector('.video-featured').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  </script>
   <script>
     // Filter logic
     const filterBtns = document.querySelectorAll('.filter-btn');
